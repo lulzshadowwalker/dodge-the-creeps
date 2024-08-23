@@ -10,6 +10,7 @@ func _ready() -> void:
 	screen_size = get_viewport_rect().size
 	hide()
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var vel = Vector2.ZERO
@@ -53,8 +54,9 @@ func _on_body_entered(body: Node2D) -> void:
 	# Disabling the area's collision shape can cause an error if it happens in the middle of the 
 	# engine's collision processing. Using set_deferred() tells Godot to wait to disable the shape until it's safe to do so.
 	$CollisionShape2D.set_deferred("disabled", true)
-	
-func start(position)-> void:
+
+
+func start(position) -> void:
 	position = position
 	show()
 	$CollisionShape2D.disabled = false
